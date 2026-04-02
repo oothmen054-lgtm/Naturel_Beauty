@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اطلبي الآن | Natural Beauty</title>
+  <meta name="description" content="اطلبي منتجات Natural Beauty الآن مع التوصيل لجميع ولايات تونس">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Tajawal', 'sans-serif'],
+          },
+          colors: {
+            primary: '#2d5a27',
+            'primary-light': '#4a8c3f',
+            secondary: '#f8f6f3',
+            accent: '#d4a853',
+            dark: '#1a1a1a',
+            muted: '#6b6b6b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+    }
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+    .btn-shine:hover::after {
+      transform: translateX(100%);
+    }
+    select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b6b6b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: left 0.75rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-left: 2.5rem;
+    }
+  </style>
+</head>
+<body class="bg-secondary min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo11.jfif-wfyy4Kvabld3QcOCzZD4hdOsRWGSXZ.jpeg" alt="Natural Beauty" class="h-14 w-14 rounded-full object-cover shadow-md">
+          <div class="hidden sm:block">
+            <span class="text-xl font-bold text-primary">Natural Beauty</span>
+            <p class="text-xs text-muted">للعناية بالبشرة</p>
+          </div>
+        </a>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-muted hover:text-primary transition-colors font-medium">الرئيسية</a>
+          <a href="index.html#products" class="text-muted hover:text-primary transition-colors font-medium">منتجاتنا</a>
+          <a href="order.html" class="text-dark font-semibold border-b-2 border-primary pb-1">اطلبي الآن</a>
+        </div>
+
+        <!-- Mobile Menu -->
+        <button onclick="toggleMenu()" class="md:hidden p-2 text-dark">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobileMenu" class="hidden md:hidden pb-6 border-t border-gray-100 mt-2 pt-4">
+        <div class="flex flex-col gap-4">
+          <a href="index.html" class="text-muted py-2">الرئيسية</a>
+          <a href="index.html#products" class="text-muted py-2">منتجاتنا</a>
+          <a href="order.html" class="text-dark font-semibold py-2">اطلبي الآن</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Order Section -->
+  <section class="pt-28 pb-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <span class="text-primary font-bold text-sm tracking-wider uppercase">طلب سريع</span>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-dark mt-3 mb-3">اطلبي الآن</h1>
+        <p class="text-muted text-lg">املئي النموذج وسنتواصل معك في أقرب وقت</p>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary to-primary-light mx-auto mt-6 rounded-full"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-8 items-start">
+        
+        <!-- Order Form -->
+        <div class="lg:col-span-3 bg-white rounded-3xl shadow-xl p-6 md:p-10 border border-gray-100">
+          <h2 class="font-bold text-xl text-dark mb-8 flex items-center gap-3">
+            <span class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </span>
+            معلومات الطلب
+          </h2>
+          
+          <form id="orderForm" class="space-y-6">
+            
+            <!-- Full Name -->
+            <div>
+              <label for="fullName" class="block text-sm font-bold text-dark mb-2">
+                الاسم الكامل <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                required
+                placeholder="أدخلي اسمك الكامل"
+                class="w-full px-5 py-4 rounded-2xl border-2 border-gray-100 bg-secondary/50 focus:outline-none focus:border-primary focus:bg-white transition-all text-dark placeholder:text-muted"
+              >
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label for="phone" class="block text-sm font-bold text-dark mb-2">
+                رقم الهاتف <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                required
+                placeholder="XX XXX XXX"
+                class="w-full px-5 py-4 rounded-2xl border-2 border-gray-100 bg-secondary/50 focus:outline-none focus:border-primary focus:bg-white transition-all text-dark placeholder:text-muted"
+              >
+            </div>
+
+            <!-- Governorate -->
+            <div>
+              <label for="governorate" class="block text-sm font-bold text-dark mb-2">
+                الولاية <span class="text-red-500">*</span>
+              </label>
+              <select 
+                id="governorate" 
+                name="governorate" 
+                required
+                class="w-full px-5 py-4 rounded-2xl border-2 border-gray-100 bg-secondary/50 focus:outline-none focus:border-primary focus:bg-white transition-all text-dark cursor-pointer appearance-none"
+              >
+                <option value="">اختاري الولاية</option>
+                <option value="تونس">تونس</option>
+                <option value="أريانة">أريانة</option>
+                <option value="بن عروس">بن عروس</option>
+                <option value="منوبة">منوبة</option>
+                <option value="نابل">نابل</option>
+                <option value="زغوان">زغوان</option>
+                <option value="بنزرت">بنزرت</option>
+                <option value="باجة">باجة</option>
+                <option value="جندوبة">جندوبة</option>
+                <option value="الكاف">الكاف</option>
+                <option value="سليانة">سليانة</option>
+                <option value="سوسة">سوسة</option>
+                <option value="المنستير">المنستير</option>
+                <option value="المهدية">المهدية</option>
+                <option value="صفاقس">صفاقس</option>
+                <option value="القيروان">القيروان</option>
+                <option value="القصرين">القصرين</option>
+                <option value="سيدي بوزيد">سيدي بوزيد</option>
+                <option value="قفصة">قفصة</option>
+                <option value="توزر">توزر</option>
+                <option value="قبلي">قبلي</option>
+                <option value="قابس">قابس</option>
+                <option value="مدنين">مدنين</option>
+                <option value="تطاوين">تطاوين</option>
+              </select>
+            </div>
+
+            <!-- Address -->
+            <div>
+              <label for="address" class="block text-sm font-bold text-dark mb-2">
+                العنوان الكامل <span class="text-red-500">*</span>
+              </label>
+              <textarea 
+                id="address" 
+                name="address" 
+                required
+                rows="3"
+                placeholder="أدخلي عنوانك بالتفصيل (الشارع، المنطقة، المعتمدية...)"
+                class="w-full px-5 py-4 rounded-2xl border-2 border-gray-100 bg-secondary/50 focus:outline-none focus:border-primary focus:bg-white transition-all text-dark placeholder:text-muted resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Product Selection -->
+            <div>
+              <label for="product" class="block text-sm font-bold text-dark mb-2">
+                المنتج <span class="text-red-500">*</span>
+              </label>
+              <select 
+                id="product" 
+                name="product" 
+                required
+                onchange="updatePrice()"
+                class="w-full px-5 py-4 rounded-2xl border-2 border-gray-100 bg-secondary/50 focus:outline-none focus:border-primary focus:bg-white transition-all text-dark cursor-pointer appearance-none"
+              >
+                <option value="Pure White Gold" data-price="30" data-old="50" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.jfif-LU2UobJ7c2MngpluTvAJfKD3NZDvPB.jpeg">Pure White Gold - 30 د.ت (بدل 50 د.ت)</option>
+                <option value="Pack essider" data-price="49" data-old="0" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/prouduit2.jfif-DzUoVYscr7q8zeIpeSIqtLng2sV3eO.jpeg">Pack essider - 49 د.ت</option>
+                <option value="كريم الترطيب" data-price="35" data-old="0" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.jfif-LU2UobJ7c2MngpluTvAJfKD3NZDvPB.jpeg">كريم الترطيب - 35 د.ت</option>
+                <option value="كريم الليل" data-price="40" data-old="0" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.jfif-LU2UobJ7c2MngpluTvAJfKD3NZDvPB.jpeg">كريم الليل - 40 د.ت</option>
+                <option value="واقي الشمس" data-price="38" data-old="0" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/prouduit2.jfif-DzUoVYscr7q8zeIpeSIqtLng2sV3eO.jpeg">واقي الشمس - 38 د.ت</option>
+              </select>
+            </div>
+
+            <!-- Quantity -->
+            <div>
+              <label for="quantity" class="block text-sm font-bold text-dark mb-2">
+                الكمية
+              </label>
+              <select 
+                id="quantity" 
+                name="quantity"
+                onchange="updateTotal()"
+                class="w-full px-5 py-4 rounded-2xl border-2 border-gray-100 bg-secondary/50 focus:outline-none focus:border-primary focus:bg-white transition-all text-dark cursor-pointer appearance-none"
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <!-- Total -->
+            <div class="bg-gradient-to-r from-primary/5 to-primary-light/5 rounded-2xl p-6 border border-primary/10">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-muted font-medium">المجموع:</span>
+                <span id="total" class="text-3xl font-extrabold text-primary">30 د.ت</span>
+              </div>
+              <p class="text-xs text-muted flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                التوصيل مجاني لجميع الولايات
+              </p>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              id="submitBtn"
+              class="btn-shine w-full bg-primary text-white py-5 rounded-2xl font-bold text-lg hover:bg-primary-light transition-all shadow-xl shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              تأكيد الطلب
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div id="successMessage" class="hidden text-center py-12">
+            <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-extrabold text-dark mb-3">تم استلام طلبك بنجاح!</h3>
+            <p class="text-muted mb-8">سنتواصل معك قريباً لتأكيد الطلب</p>
+            <a href="index.html" class="inline-block bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-primary-light transition-all shadow-lg">
+              العودة للرئيسية
+            </a>
+          </div>
+
+          <!-- Error Message -->
+          <div id="errorMessage" class="hidden bg-red-50 border-2 border-red-200 text-red-700 p-5 rounded-2xl mt-6">
+            <p class="font-medium">حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.</p>
+          </div>
+        </div>
+
+        <!-- Product Info Card -->
+        <div class="lg:col-span-2 space-y-6">
+          
+          <!-- Selected Product Preview -->
+          <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="aspect-square relative overflow-hidden bg-secondary">
+              <img id='productImage' src="productImage"  alt="Product" class="w-full h-full object-cover">
+              <span id="discountBadge" class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                خصم 40%
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 id="productName" class="font-bold text-xl text-dark mb-2">Pure White Gold</h3>
+              <p class="text-muted text-sm mb-4">كريم تفتيح بالذهب الخالص</p>
+              <div class="flex items-center gap-4">
+                <span id="currentPrice" class="text-2xl font-extrabold text-primary">30 د.ت</span>
+                <span id="oldPrice" class="text-muted line-through">50 د.ت</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+            <h4 class="font-bold text-dark mb-5">لماذا تختاريننا؟</h4>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-dark">منتج أصلي 100%</p>
+                  <p class="text-sm text-muted">نضمن لك الجودة</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-dark">توصيل سريع</p>
+                  <p class="text-sm text-muted">لجميع ولايات تونس</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-dark">الدفع عند الاستلام</p>
+                  <p class="text-sm text-muted">ادفعي عند استلام طلبك</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo11.jfif-wfyy4Kvabld3QcOCzZD4hdOsRWGSXZ.jpeg" alt="Natural Beauty" class="h-12 w-12 rounded-full object-cover">
+          <span class="font-bold text-lg">Natural Beauty</span>
+        </div>
+        <div class="flex items-center gap-6 text-gray-400">
+          <a href="index.html" class="hover:text-primary transition-colors">الرئيسية</a>
+          <a href="index.html#products" class="hover:text-primary transition-colors">منتجاتنا</a>
+          <a href="order.html" class="hover:text-primary transition-colors">اطلبي الآن</a>
+        </div>
+        <p class="text-gray-500 text-sm">&copy; 2026 Natural Beauty</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    let currentPrice = 30;
+
+    function updatePrice() {
+      const productSelect = document.getElementById('product');
+      const selectedOption = productSelect.options[productSelect.selectedIndex];
+      currentPrice = parseInt(selectedOption.dataset.price);
+      const oldPrice = parseInt(selectedOption.dataset.old);
+      const imageUrl = selectedOption.dataset.image;
+      
+      document.getElementById('currentPrice').textContent = currentPrice + ' د.ت';
+      document.getElementById('productName').textContent = selectedOption.value;
+      document.getElementById('productImage').src = imageUrl;
+      if (oldPrice > 0) {
+        document.getElementById('oldPrice').textContent = oldPrice + ' د.ت';
+        document.getElementById('oldPrice').classList.remove('hidden');
+        document.getElementById('discountBadge').classList.remove('hidden');
+      } else {
+        document.getElementById('oldPrice').classList.add('hidden');
+        document.getElementById('discountBadge').classList.add('hidden');
+      }
+      
+      updateTotal();
+    }
+
+    function updateTotal() {
+      const quantity = document.getElementById('quantity').value;
+      const total = quantity * currentPrice;
+      document.getElementById('total').textContent = total + ' د.ت';
+    }
+
+    // Handle form submission
+    document.getElementById('orderForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const form = document.getElementById('orderForm');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'جاري الإرسال...';
+      errorMessage.classList.add('hidden');
+      
+      const formData = {
+        fullName: document.getElementById('fullName').value,
+        phone: document.getElementById('phone').value,
+        governorate: document.getElementById('governorate').value,
+        address: document.getElementById('address').value,
+        product: document.getElementById('product').value,
+        quantity: document.getElementById('quantity').value,
+        total: document.getElementById('total').textContent
+      };
+      
+      try {
+        // TODO: Replace with your Google Sheets Web App URL
+        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwdvTVKonubPKZ4qYXE75yWesLbuYKT70oy6GI96hC4Nod2VXp_6vXQBIdbh4aoS0fU1w/exec';
+        
+        // Uncomment when you have your Google Sheets URL
+        
+       await fetch(GOOGLE_SHEETS_URL, {
+  method: 'POST',
+  mode: 'no-cors',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(formData)
+});
+        
+        // Simulate success
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        form.classList.add('hidden');
+        successMessage.classList.remove('hidden');
+        
+      } catch (error) {
+        console.error('Error:', error);
+        errorMessage.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'تأكيد الطلب';
+      }
+    });
+
+    // Get product from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productFromUrl = urlParams.get('product');
+    const priceFromUrl = urlParams.get('price');
+    
+    if (productFromUrl) {
+      const productSelect = document.getElementById('product');
+      for (let i = 0; i < productSelect.options.length; i++) {
+        if (productSelect.options[i].value === productFromUrl) {
+          productSelect.selectedIndex = i;
+          updatePrice();
+          break;
+        }
+      }
+    }
+  </script>
+</body>
+</html>

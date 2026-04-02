@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natural Beauty | منتجات العناية بالبشرة</title>
+  <meta name="description" content="اكتشفي جمالك الطبيعي مع منتجاتنا الفاخرة للعناية بالبشرة">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Tajawal', 'sans-serif'],
+          },
+          colors: {
+            primary: '#2d5a27',
+            'primary-light': '#4a8c3f',
+            secondary: '#f8f6f3',
+            accent: '#d4a853',
+            dark: '#1a1a1a',
+            muted: '#6b6b6b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #2d5a27, #4a8c3f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+    }
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+    .btn-shine:hover::after {
+      transform: translateX(100%);
+    }
+  </style>
+</head>
+<body class="bg-white text-dark">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo11.jfif-wfyy4Kvabld3QcOCzZD4hdOsRWGSXZ.jpeg" alt="Natural Beauty" class="h-14 w-14 rounded-full object-cover shadow-md">
+          <div class="hidden sm:block">
+            <span class="text-xl font-bold text-primary">Natural Beauty</span>
+            <p class="text-xs text-muted">للعناية بالبشرة</p>
+          </div>
+        </a>
+        
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-dark font-semibold border-b-2 border-primary pb-1">الرئيسية</a>
+          <a href="#products" class="text-muted hover:text-primary transition-colors font-medium">منتجاتنا</a>
+          <a href="#features" class="text-muted hover:text-primary transition-colors font-medium">مميزاتنا</a>
+          <a href="order.html" class="btn-shine bg-primary text-white px-7 py-3 rounded-full font-bold hover:bg-primary-light transition-all shadow-lg shadow-primary/30">
+            اطلبي الآن
+          </a>
+        </div>
+
+        <!-- Mobile Menu -->
+        <button onclick="toggleMenu()" class="md:hidden p-2 text-dark">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobileMenu" class="hidden md:hidden pb-6 border-t border-gray-100 mt-2 pt-4">
+        <div class="flex flex-col gap-4">
+          <a href="index.html" class="text-dark font-semibold py-2">الرئيسية</a>
+          <a href="#products" class="text-muted py-2">منتجاتنا</a>
+          <a href="#features" class="text-muted py-2">مميزاتنا</a>
+          <a href="order.html" class="bg-primary text-white px-6 py-3 rounded-full font-bold text-center mt-2">
+            اطلبي الآن
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-b from-secondary to-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Text Content -->
+        <div class="text-center lg:text-right">
+          <span class="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-bold mb-6">
+            <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            عروض حصرية
+          </span>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            <span class="text-dark">اكتشفي</span>
+            <span class="gradient-text"> جمالك الطبيعي</span>
+          </h1>
+          
+          <p class="text-muted text-lg md:text-xl leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+            منتجات فاخرة للعناية بالبشرة من مكونات طبيعية 100% لبشرة مشرقة وصحية
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+            <a href="#products" class="btn-shine bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-primary-light transition-all shadow-xl shadow-primary/30">
+              تصفحي المنتجات
+            </a>
+            <a href="order.html" class="border-2 border-primary text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-white transition-all">
+              اطلبي الآن
+            </a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="flex flex-wrap gap-8 justify-center lg:justify-start">
+            <div class="text-center">
+              <div class="text-3xl font-extrabold text-primary">+5000</div>
+              <div class="text-sm text-muted">عميلة سعيدة</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-extrabold text-primary">100%</div>
+              <div class="text-sm text-muted">منتجات طبيعية</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-extrabold text-primary">24</div>
+              <div class="text-sm text-muted">ولاية توصيل</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Logo/Brand Image -->
+        <div class="relative flex justify-center items-center order-first lg:order-last">
+          <div class="relative">
+            <!-- Decorative rings -->
+            <div class="absolute inset-0 w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-primary/20 to-primary-light/10 rounded-full blur-3xl"></div>
+            <div class="absolute inset-8 w-64 h-64 md:w-80 md:h-80 border-4 border-primary/20 rounded-full"></div>
+            <div class="absolute inset-16 w-48 h-48 md:w-64 md:h-64 border-2 border-accent/30 rounded-full"></div>
+            
+            <!-- Main Logo -->
+            <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo11.jfif-wfyy4Kvabld3QcOCzZD4hdOsRWGSXZ.jpeg" alt="Natural Beauty" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="text-primary font-bold text-sm tracking-wider uppercase">تشكيلتنا</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-dark mt-3 mb-4">منتجاتنا المميزة</h2>
+        <p class="text-muted text-lg max-w-2xl mx-auto">اختاري من مجموعتنا الفاخرة للعناية بالبشرة</p>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary to-primary-light mx-auto mt-6 rounded-full"></div>
+      </div>
+      
+      <!-- Products Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        
+        <!-- Product 1 - Pure White (Featured) -->
+        <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 relative">
+          <div class="absolute top-4 right-4 z-10 bg-red-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+            خصم 40%
+          </div>
+          <div class="aspect-square overflow-hidden bg-secondary">
+            <img src="1.jfif">
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-dark text-lg mb-2">Pure White Gold</h3>
+            <p class="text-muted text-sm mb-4 line-clamp-2">كريم تفتيح بالذهب الخالص</p>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-xl font-extrabold text-primary">30 د.ت</span>
+              <span class="text-sm text-muted line-through">50 د.ت</span>
+            </div>
+            <a href="order.html?product=Pure White Gold&price=30&img=1.jfif" class="block w-full bg-primary text-white py-3 rounded-xl font-bold text-center hover:bg-primary-light transition-all">
+              اطلبي الآن
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+         <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 relative">
+          <div class="absolute top-4 right-4 z-10 bg-red-500 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+            خصم 40%
+          </div>
+          <div class="aspect-square overflow-hidden bg-secondary">
+            <img src="prouduit2.jfif" alt="Pack essider" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-dark text-lg mb-2">Pack essider</h3>
+            <p class="text-muted text-sm mb-4 line-clamp-2">🌿✨ باك شامبو بالسدر ✨🌿</p>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-xl font-extrabold text-primary">49 د.ت</span>
+              <span class="text-sm text-muted line-through">65 د.ت</span>
+            </div>
+            <a href="order.html?product=Pack essider&price=49" class="block w-full bg-primary text-white py-3 rounded-xl font-bold text-center hover:bg-primary-light transition-all">
+              اطلبي الآن
+            </a>
+          </div>
+        </div>
+
+
+        <!-- Product 3 -->
+        
+        <!-- Product 4 -->
+       
+        <!-- Product 5 -->
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-secondary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-primary font-bold text-sm tracking-wider uppercase">لماذا نحن</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-dark mt-3 mb-4">مميزاتنا</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary to-primary-light mx-auto mt-6 rounded-full"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Feature 1 -->
+        <div class="text-center p-8 bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all">
+          <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark text-lg mb-2">منتج أصلي 100%</h3>
+          <p class="text-muted text-sm">نضمن لك منتجات أصلية بجودة عالية</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="text-center p-8 bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all">
+          <div class="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark text-lg mb-2">توصيل سريع</h3>
+          <p class="text-muted text-sm">نوصل لجميع ولايات تونس الـ 24</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="text-center p-8 bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all">
+          <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark text-lg mb-2">الدفع عند الاستلام</h3>
+          <p class="text-muted text-sm">ادفعي عند استلام طلبك</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="text-center p-8 bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-dark text-lg mb-2">خدمة عملاء</h3>
+          <p class="text-muted text-sm">فريق متاح للإجابة على استفساراتك</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-primary-light">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">جاهزة لتجربة الفرق؟</h2>
+      <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">اطلبي الآن واحصلي على بشرة مشرقة وصحية مع منتجاتنا الطبيعية</p>
+      <a href="order.html" class="inline-block bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-secondary transition-all shadow-xl">
+        اطلبي الآن
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+        
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo11.jfif-wfyy4Kvabld3QcOCzZD4hdOsRWGSXZ.jpeg" alt="Natural Beauty" class="h-14 w-14 rounded-full object-cover">
+            <span class="text-xl font-bold">Natural Beauty</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed">
+            منتجات فاخرة للعناية بالبشرة من مكونات طبيعية 100%
+          </p>
+        </div>
+        
+        <!-- Links -->
+        <div>
+          <h4 class="font-bold text-lg mb-5">روابط سريعة</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="index.html" class="hover:text-primary transition-colors">الرئيسية</a></li>
+            <li><a href="#products" class="hover:text-primary transition-colors">منتجاتنا</a></li>
+            <li><a href="order.html" class="hover:text-primary transition-colors">اطلبي الآن</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact -->
+        <div>
+          <h4 class="font-bold text-lg mb-5">تواصلي معنا</h4>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <span>+216 23872404</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>تونس</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Natural Beauty. جميع الحقوق محفوظة</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
